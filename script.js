@@ -83,11 +83,19 @@ back.addEventListener('click', ()=>{
 })
 // prevent user to input unnecessasry characters
 screen.addEventListener('input', ()=>{
-    screen.value = screen.value.replace(/[^0-9+\-*/%.()]/g,'');
+    screen.value = screen.value.replace(/[^0-9+\-*/%.()✕÷]/g,'');
 })
 equal.addEventListener('click', ()=>{
-    let q = screen.value;
-    let b = q.replace(/(\d+)%/g, "($1/100)");
-    let s = b.replace('✕', "*");
-    screen.value = eval(s.replace('÷', "/"));
+    let exp = screen.value;
+
+    exp = exp.replace(/✕/g, "*");
+    exp = exp.replace(/÷/g, "/");
+
+    exp = exp.replace(/(\d+(\.\d+)?)%/g, "($1/100)");
+
+    try {
+        screen.value = eval(exp);
+    } catch {
+        screen.value = "Error";
+    }
 })
