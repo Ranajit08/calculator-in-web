@@ -25,9 +25,13 @@
     box-shadow: inset 1px 1px 5px rgb(104, 104, 104);
 }
 #s {
+    caret-color: white;
     border: none;
     height: 60px;
     width: 260px;
+    overflow-x:auto;
+    white-space: nowrap;
+    box-sizing: border-box;
     font-size: 30px;
     margin-bottom: 10px;
     border-radius: 10px;
