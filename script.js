@@ -1,9 +1,10 @@
-window.addEventListener('load', ()=>{
-    const loader = document.getElementById("loader");
-    setTimeout(()=> {
-        loader.classList.add("hide");
-    }, 1500);
-})
+window.addEventListener('load', async ()=>{
+    try {
+        await document.fonts.ready;
+    } catch(e) {}
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('calc').style.display = 'flex';
+});
 
 const one = document.getElementById('one');
 const two = document.getElementById('two');
