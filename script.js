@@ -1,3 +1,10 @@
+window.addEventListener('load', ()=>{
+    const loader = document.getElementById("loader");
+    setTimeout(()=> {
+        loader.classList.add("hide");
+    }, 1500);
+})
+
 const one = document.getElementById('one');
 const two = document.getElementById('two');
 const three = document.getElementById('three');

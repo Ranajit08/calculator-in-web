@@ -61,6 +61,26 @@ body {
     align-items: center;
     justify-content: center;
 }
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid gray;
+    border-top: 6px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+.loader-screen {
+    position: fixed;
+    inset: 0;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
 @media (max-width: 600px) {
     #calc {
         margin-top: 3vw;
